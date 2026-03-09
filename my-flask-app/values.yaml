@@ -1,0 +1,14 @@
+image:
+  repository: manibatchu/flask-pvc-app
+  tag: v1
+  pullPolicy: IfNotPresent
+
+persistence:
+  storageClassName: csi-hostpath-sc
+  claimName: my-release-pvc
+  mountPath: /data
+
+service:
+  type: NodePort
+  port: 5000
+  nodePort: 30007
